@@ -4,7 +4,7 @@
 class Cell {
 	
 	private: 
-		bool w_up,w_left,w_right,w_down,marked;
+		bool w_up,w_left,w_right,w_down,marked,solution;
 	public:
 		Cell();
 		bool up();
@@ -18,6 +18,8 @@ class Cell {
 		bool isMarked();
 		void mark();
 		void unmark();
+		void setSolution();
+		bool isSolution();
 } ;
 
 #endif

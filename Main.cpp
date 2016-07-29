@@ -7,8 +7,8 @@
 using namespace std;
 
 int main(int argc,char* argv[]){
-	if(argc!=2){
-		cout<< "Must specify a valid dimension" << endl ;
+	if(argc!=3){
+		cout<< "Insufficient arguments" << endl ;
 		return 1;
 	}
 	int dim=atoi(argv[1]);
@@ -16,9 +16,13 @@ int main(int argc,char* argv[]){
 		cout<< "Must specify a valid dimension" << endl ;
 		return 1;
 	}
+	int show=atoi(argv[2]);
+	if(show!=0 && show!=1){
+		cout<< "Must specify desire to show the solution" << endl;
+	}
 	Maze m(dim,0,0);
 	SVGPrinter p;
-	p.print(m);
+	p.print(m,(bool)show);
 	cout << "Generated a " << dim << "x" << dim << " maze" << endl;
 }
 	

@@ -6,7 +6,7 @@
 class SVGPrinter {
 	
 	public:
-		void print(Maze const& mz);
+		void print(Maze const& mz,bool show);
 } ;
 
 #endif

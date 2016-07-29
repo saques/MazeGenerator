@@ -9,7 +9,7 @@ class Maze{
 	private:
 		Matrix<Cell>* m;
 		int dim;
-		void apply(int i,int j);
+		bool apply(int i,int j);
 	public:
 		Maze(int dim,int i,int j);
 		~Maze();

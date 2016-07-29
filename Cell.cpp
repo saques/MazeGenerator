@@ -8,6 +8,7 @@ Cell::Cell(){
 	this->w_right=true;
 	this->w_down=true;
 	this->marked=false;
+	this->solution=false;
 }
 
 bool Cell::up(){
@@ -53,3 +54,13 @@ void Cell::mark(){
 void Cell::unmark(){
 	this->marked=false;
 }
+
+void Cell::setSolution(){
+	this->solution=true;
+}
+
+bool Cell::isSolution(){
+	return this->solution;
+}
+
+

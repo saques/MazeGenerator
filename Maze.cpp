@@ -35,9 +35,14 @@ Maze::~Maze(){
 	delete this->m;
 }
 
-void Maze::apply(int i,int j){
+bool Maze::apply(int i,int j){
 	Cell& current=this->m->get(i,j);
 	current.mark();
+	if(i==(this->dim-1)&&j==(this->dim-1)){
+		current.setSolution();
+		return true;
+	}
+	bool retval=false;
 	int dirs[]={0,1,2,3};
 	shuffle(dirs,4);
 	for(int k=0;k<4;k++){
@@ -66,9 +71,13 @@ void Maze::apply(int i,int j){
 				default:
 					break;
 			}
-			apply(n_i,n_j);
+			if(apply(n_i,n_j)){
+				retval=true;
+				current.setSolution();
+			}
 		}
 	}
+	return retval;
 }
 
 
