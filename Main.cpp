@@ -19,6 +19,7 @@ int main(int argc,char* argv[]){
 	int show=atoi(argv[2]);
 	if(show!=0 && show!=1){
 		cout<< "Must specify desire to show the solution" << endl;
+		return 1;
 	}
 	Maze m(dim,0,0);
 	SVGPrinter p;
