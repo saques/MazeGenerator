@@ -4,9 +4,9 @@
 #include "Maze.h"
 
 class SVGPrinter {
-	
+
 	public:
-		void print(Maze const& mz,bool show);
+		void print(Maze const& mz);
 } ;
 
 #endif
